@@ -1,0 +1,26 @@
+// Colors
+$black: rgb(51, 51, 51);
+
+// Animations
+@keyframes pulse {
+  to { box-shadow: 0 0 45px rgba(255, 255, 255, 0); }
+}
+
+@keyframes teleport {
+  0% { max-height: 64px; }
+  33% { max-height: 0; }
+  66% {
+    max-height: 0;
+    top: 30px;
+    right: auto;
+    left: 30px;
+    bottom: auto;
+  }
+  100% {
+    max-height: 64px;
+    top: 30px;
+    right: auto;
+    left: 30px;
+    bottom: auto;
+  }
+}

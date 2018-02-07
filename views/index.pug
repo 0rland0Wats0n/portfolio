@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  .landing__logo
+    img(src="/images/logo_notext.png", alt="Logo")
+  .landing__container.landing__container_intro.flex__container
+    .divider__black.loader
+    .landing__section.landing__left_container.flex__left
+      h1 i'm
+    .landing__section.landing__right_container.flex__right
+      h1 orlando
+  .landing__container.landing__container_about.flex__container
+    .divider__black
+    .landing__section.landing__left_container.flex__left
+      .landing__about_section
+        p i'm a self-taught,
+        p in computer science
+        p fullstack web
+        p in, and enjoy web
+        p website            
+    .landing__section.landing__right_container.flex__right
+      .landing__about_section
+        p bachelor of science
+        p degree having
+        p developer. i specialize
+        p application
+        p development/design.
+  .landing__container.landing__container_skills.landing__container_invert.flex__container
+    h2.landing__heading skills.
+    .divider__white   
+    .landing__section.landing__left_container.flex__left
+      .skill__name
+        p html/css
+      .skill__name
+        p javascript
+      .skill__name
+        p php
+      .skill__name
+        p python
+      .skill__name
+        p wordpress
+      .skill__name
+        p react.js
+      .skill__name
+        p node.js
+      .skill__name
+        p illustrator
+      .skill__name
+        p photoshop
+    .landing__section.landing__right_container.flex__right
+      .skill__level: span.skill__level_9
+      .skill__level: span.skill__level_8
+      .skill__level: span.skill__level_6
+      .skill__level: span.skill__level_6
+      .skill__level: span.skill__level_7
+      .skill__level: span.skill__level_6
+      .skill__level: span.skill__level_7
+      .skill__level: span.skill__level_7
+      .skill__level: span.skill__level_7
+  .landing__container.landing__container_contact.flex__container
+    a(href="mailto:thewatsonorlando@gmail.com") contact.
+    ul.landing__social_links
+      li: a(href="//github.com/0rland0Wats0n", target="_blank")
+        i.fab.fa-github
+      li: a(href="//www.linkedin.com/in/watsonorlando/", target="_blank")
+        i.fab.fa-linkedin
+      li: a(href="//twitter.com/TheOrlandoW", target="_blank")
+        i.fab.fa-twitter

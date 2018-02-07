@@ -1,0 +1,23 @@
+.flex__container {
+  display: flex;
+  
+  &.flex__container__row {
+    flex-direction: row;
+  }
+
+  & > div[class*="flex"] {
+    overflow: hidden;
+  }
+
+  .flex__left {
+    order: 1;
+    height: 100%;
+    width: 50%;
+  }
+
+  .flex__right {
+    order: 2;
+    height: 100%;
+    width: 50%;
+  }
+}
