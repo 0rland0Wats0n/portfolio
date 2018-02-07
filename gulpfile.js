@@ -8,11 +8,15 @@ gulp.task('default', () => {
     script: './bin/start.js',
     ext: 'js scss'
   }).on('restart', () => {
-    gulp.src('./public/stylesheets/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer())
-      .pipe(gulp.dest('./public/stylesheets'));
+    console.log('Restarting....');
   });
 });
 
-gulp.watch('default');
+gulp.task('sass', () => {
+  gulp.src('./public/stylesheets/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./public/stylesheets'));
+});
+
+gulp.watch('default', ['sass']);
