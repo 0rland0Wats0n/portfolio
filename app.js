@@ -3,6 +3,9 @@ import cookieParser from 'cookie-parser';
 import Debug from 'debug';
 import express from 'express';
 import logger from 'morgan';
+import sassMiddleware from 'node-sass-middleware';
+import autoprefixer from 'autoprefixer';
+import postcssMiddleware from 'postcss-middleware';
 import path from 'path';
 // import favicon from 'serve-favicon';
 
@@ -21,7 +24,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-
+app.use(sassMiddleware({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  debug: true,
+  outputStyle: 'compressed'
+}));
+app.use('/stylesheets', postcssMiddleware({
+  src: (req) => {
+    return path.join(__dirname, 'public', 'stylesheets', req.path);
+  },
+  plugins: [
+    autoprefixer()
+  ],
+  options: {
+    map: {
+      inline: false
+    }
+  }
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
