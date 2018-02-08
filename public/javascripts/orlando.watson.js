@@ -100,6 +100,13 @@
     // show skill bars as scroll
     if (inView(skillsContainer)) {
       let scrollP = scrollPercentage(skillsContainer);
+      let logoContainer = document.querySelector('.landing__logo');
+
+      if (scrollP >= 10 && scrollP <= 70) {
+        logoContainer.classList.add('is_passing__skills');
+      } else {
+        logoContainer.classList.remove('is_passing__skills');
+      }
 
       if (scrollP <= 0) {
         skillBars.forEach((skillBar) => {

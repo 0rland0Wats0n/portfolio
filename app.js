@@ -31,9 +31,7 @@ app.use(sassMiddleware({
   outputStyle: 'compressed'
 }));
 app.use('/stylesheets', postcssMiddleware({
-  src: (req) => {
-    return path.join(__dirname, 'public', 'stylesheets', req.path);
-  },
+  src: (req) => { return path.join(__dirname, 'public', 'stylesheets', req.path); },
   plugins: [
     autoprefixer()
   ],
