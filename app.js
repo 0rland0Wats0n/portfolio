@@ -7,6 +7,7 @@ import sassMiddleware from 'node-sass-middleware';
 import autoprefixer from 'autoprefixer';
 import postcssMiddleware from 'postcss-middleware';
 import path from 'path';
+import sslRedirect from 'heroku-ssl-redirect';
 // import favicon from 'serve-favicon';
 
 import index from './routes/index';
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+app.use(sslRedirect());
 app.use(sassMiddleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
